@@ -13,3 +13,6 @@ User.create email: 'politisj@gmail.com', name: 'John Politis' ,password: 'chicke
 User.create email: 'fred@gmail.com', name: 'fred freddddd' ,password: 'chicken'
 User.create email: 'blob@gmail.com', name: 'blob blobblob' ,password: 'chicken'
 User.create email: 'bill@gmail.com', name: 'bill billbill' ,password: 'chicken'
+
+Airplane.destroy_all
+Airplane.create name: 'Virgin Airlines' , rows: 24 , columns: 4, plane_type: '757'
