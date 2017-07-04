@@ -9,10 +9,10 @@
 
 User.destroy_all
 
-User.create email: 'politisj@gmail.com', name: 'John Politis' ,password: 'chicken'
-User.create email: 'fred@gmail.com', name: 'fred freddddd' ,password: 'chicken'
-User.create email: 'blob@gmail.com', name: 'blob blobblob' ,password: 'chicken'
-User.create email: 'bill@gmail.com', name: 'bill billbill' ,password: 'chicken'
+u1 = User.create email: 'politisj@gmail.com', name: 'John Politis' ,password: 'chicken'
+u2 = User.create email: 'fred@gmail.com', name: 'fred freddddd' ,password: 'chicken'
+u3 = User.create email: 'blob@gmail.com', name: 'blob blobblob' ,password: 'chicken'
+u4 = User.create email: 'bill@gmail.com', name: 'bill billbill' ,password: 'chicken'
 
 Airplane.destroy_all
 a1 = Airplane.create name: 'Virgin Airlines' , rows: 24 , columns: 4, plane_type: '757'
@@ -27,3 +27,7 @@ f3 = Flight.create flight_no: '09' , departure_date: Date.strptime('2013-03-08',
 a1.flights << f1;
 a2.flights << f2;
 a3.flights << f3;
+
+f1.users << u1
+f1.users << u2
+f1.users << u3
