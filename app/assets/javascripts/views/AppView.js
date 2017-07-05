@@ -6,6 +6,7 @@ app.AppView = Backbone.View.extend({
   render: function(){
     this.$el.html( $('#AppViewTemplate').html() );
     console.log('app.AppView::render');
+    new app.FlightsView().render();   
   }
 
 });
