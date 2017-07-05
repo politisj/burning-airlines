@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  root "pages#app"
+  get '/app' => 'pages#app'
 
-  resources :reservations
-  root to: "users#new"
+  get '/search' => 'pages#search'
+
+
 
   get     '/login' => 'session#new'       # login form
   post    '/login' => 'session#create'   # check credentials & attempt login (set session)
@@ -9,5 +12,6 @@ Rails.application.routes.draw do
   resources :flights
   resources :airplanes
   resources :users
+  resources :reservations
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
