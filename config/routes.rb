@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :reservations
   root to: "users#new"
 
   get     '/login' => 'session#new'       # login form
