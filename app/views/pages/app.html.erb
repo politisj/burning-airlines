@@ -3,10 +3,26 @@
 <script type="html/template" id="AppViewTemplate">
   <h1>Main App View</h1>
   <hr/>
+
+  <input id="from" type="text" placeholder="from..">
+  <input id="to" type="text" placeholder="to..">
+  <button id="btn-search-flights">Search Flights</button>
+  <h2>Search Flight Results</h2>
+
+  <ul id="planes"> </ul>
+
+  <div id="search-flight-results"></div>
+
 </script>
 
 <script type="html/template" id="search">
-  <button>Search Flights</button>
+    <input id="from" type="text" placeholder="to..">
+    <input id="to" type="text" placeholder="from..">
+    <button>Search Flights</button>
+</script>
+
+<script type="html/template" id="planesViewTemplate">
+    <h3>{{ name }} , {{ plane_type }}  , {{rows}}  , {{columns}}</h3>
 </script>
 
 <script type="html/template" id="flightsViewTemplate">

@@ -1,18 +1,11 @@
 var app = app || {};
 
-//app.flights = new app.Flights();
-
-// Create instance of router for the whole app
-app.router = new app.AppRouter();
-app.airplanes = new app.Airplanes();
+_.templateSettings = {
+     evaluate : /\{\[([\s\S]+?)\]\}/g,
+     interpolate : /\{\{([\s\S]+?)\}\}/g
+};
 
 $(document).ready(function(){
-
-  // Load all secrets from the Rails DB into the collection using AJAX
-  Backbone.history.start();
-  app.airplanes.fetch();
-  
-
-  //app.flights.fetch();
-
+  app.router = new app.AppRouter();
+  Backbone.history.start();  
 });
