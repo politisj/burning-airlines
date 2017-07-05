@@ -27,7 +27,11 @@ f3 = Flight.create flight_no: '09' , departure_date: Date.strptime('2013-03-08',
 a1.flights << f1;
 a2.flights << f2;
 a3.flights << f3;
+#
+Reservation.destroy_all
+r1 = Reservation.create row: 1 , col: 1
 
-f1.users << u1
-f1.users << u2
-f1.users << u3
+f1.reservations << r1
+u1.reservations << r1
+# f1.users << u2
+# f1.users << u3
