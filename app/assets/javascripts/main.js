@@ -7,5 +7,6 @@ _.templateSettings = {
 
 $(document).ready(function(){
   app.router = new app.AppRouter();
-  Backbone.history.start();  
+  Backbone.history.start();
+  app.flights.fetch();
 });

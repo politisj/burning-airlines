@@ -5,6 +5,16 @@ class FlightsController < ApplicationController
   # GET /flights.json
   def index
     @flights = Flight.all
+
+    respond_to do | format |
+        format.json {
+            @flights = Flight.where({ from: params[:from] , to: params[:to]})  if params[:from].present? && params[:to].present?
+            render json: @flights
+        }
+        format.html {
+            render :index #@flights
+        }
+    end
   end
 
   # GET /flights/1
@@ -50,6 +60,16 @@ class FlightsController < ApplicationController
       end
     end
   end
+
+  # def search
+  #     @flights = Flight.all;
+  #
+  #     # @from = params[:from]
+  #     # @to = params[:to];
+  #     # puts @from
+  #     # @res = Flight.where({from: @from});
+  #     # puts @res
+  # end
 
   # DELETE /flights/1
   # DELETE /flights/1.json
