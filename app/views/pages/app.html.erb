@@ -3,23 +3,35 @@
 <script type="html/template" id="AppViewTemplate">
   <h1>Main App View</h1>
   <hr/>
+  <div id="main-details-view"></div>
 </script>
 
 <script type="html/template" id="searchTemplate">
     <input id="from" type="text" placeholder="from..">
     <input id="to" type="text" placeholder="to..">
     <button>Search Flights</button>
+    <h2>Flight Search Results</h2>
 </script>
 
 <script type="html/template" id="flightViewTemplate">
     <ul id="flightInfoList">
         {{departure_date}}
-        {{from}}
-        {{to}}
-        {{flight_no}}
+        <a href="">{{flight_no}}</a>
+        {{from}} > {{to}}
+        747
     </ul>
 </script>
 
 <script type="html/template" id="planesViewTemplate">
     <h3>{{ name }} , {{ plane_type }}  , {{rows}}  , {{columns}}</h3>
+</script>
+
+<script type="html/template" id="flightDetailsTemplate">
+    <h3>Virgin Airlines</h3>
+    {{departure_date}}
+    {{flight_no}}
+    {{from}} > {{to}}
+    <p/>
+    <button>Reserve Seat</button>
+    <p/>
 </script>
